@@ -1,17 +1,19 @@
 package util;
 
+import org.hibernate.SessionFactory;
+
 public class Util {
-//    public static volatile Util instance;
-//
-//    public static Util getInstance() {
-//        Util localInstance = instance;
-//        if (localInstance == null) {
-//            synchronized (Util.class) {
-//                localInstance = instance;
-//                if (localInstance == null) {
-//                    instance = localInstance = new Util();
-//                }
-//            }
-//        }
-//    }
+    private static volatile Util INSTANCE;
+
+    public static Util getInstance() {
+        if (null == INSTANCE) {
+            synchronized (Util.class) {
+                if (null == INSTANCE) {
+                    INSTANCE = new Util();
+                }
+            }
+        }
+        return INSTANCE;
+    }
 }
+
