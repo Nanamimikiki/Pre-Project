@@ -1,6 +1,5 @@
 package util;
 
-import org.hibernate.SessionFactory;
 
 public class Util {
     private static volatile Util INSTANCE;
