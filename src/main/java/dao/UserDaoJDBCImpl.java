@@ -1,9 +1,12 @@
 package dao;
 
 import model.User;
+import util.Util;
+import java.sql.Connection;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
+    private static final Connection connection = Util.getConnection();
 
     public UserDaoJDBCImpl() {
 

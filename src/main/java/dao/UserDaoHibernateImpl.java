@@ -33,8 +33,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
-        return users;
+        return null;
     }
 
     @Override
