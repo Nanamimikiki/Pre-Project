@@ -6,8 +6,7 @@ import java.sql.Connection;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private static final Connection connection = Util.getConnection();
-
+    private static final Connection connection = Util.getInstance().getConnection();
     public UserDaoJDBCImpl() {
 
     }
