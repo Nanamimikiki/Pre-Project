@@ -1,8 +1,8 @@
-package dao;
+package jdbc.dao;
 
-import model.User;
+import jdbc.model.User;
+import jdbc.service.UserDao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {

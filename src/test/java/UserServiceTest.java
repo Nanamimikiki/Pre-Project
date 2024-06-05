@@ -1,9 +1,9 @@
 
-import model.User;
+import jdbc.model.User;
 import org.junit.Assert;
 import org.junit.Test;
-import service.UserService;
-import service.UserServiceImpl;
+import jdbc.service.UserService;
+import jdbc.service.UserServiceImpl;
 
 import java.util.List;
 

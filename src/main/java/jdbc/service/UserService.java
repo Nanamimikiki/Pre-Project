@@ -1,10 +1,9 @@
-package dao;
+package jdbc.service;
 
-import model.User;
-
+import jdbc.model.User;
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
     void createUsersTable();
 
     void dropUsersTable();

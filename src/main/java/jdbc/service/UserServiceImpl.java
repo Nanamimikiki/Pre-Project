@@ -1,11 +1,13 @@
-package service;
+package jdbc.service;
 
-import dao.UserDaoJDBCImpl;
-import model.User;
+import jdbc.dao.UserDaoJDBCImpl;
+import jdbc.model.User;
+
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
     private UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
+
     public void createUsersTable() {
         userDao.createUsersTable();
     }
@@ -26,6 +28,7 @@ public class UserServiceImpl implements UserService {
 
         return userDao.getAllUsers();
     }
+
     public void cleanUsersTable() {
         userDao.cleanUsersTable();
     }

@@ -1,9 +1,8 @@
-package util;
+package jdbc.util;
 
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-
 import javax.sql.DataSource;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,7 +18,8 @@ public class Util {
     private static final String DB_URL = "db.url";
     private static final String DB_DRIVER_CLASS = "driver.class.name";
     private static final String DB_POOL_SIZE = "db.pool.size";
-
+    private static final String DB_MIN_IDLE = "db.min.idle";
+    private static final  String LOGIN_TIMEOUT = "login.timeout";
     public static Util getInstance() {
         if (null == INSTANCE) {
             synchronized (Util.class) {
@@ -47,7 +47,7 @@ public class Util {
 
     public static DataSource getDataSource() throws IOException, SQLException {
         DataSource dataSource = new HikariDataSource(getDatasourceConfig());
-        dataSource.setLoginTimeout(3);
+        dataSource.setLoginTimeout(Integer.parseInt(LOGIN_TIMEOUT));
         return dataSource;
     }
 
@@ -58,14 +58,14 @@ public class Util {
         config.setJdbcUrl(properties.getProperty(DB_URL));
         config.setUsername(properties.getProperty(DB_USERNAME));
         config.setPassword(properties.getProperty(DB_PASSWORD));
-        config.setMinimumIdle(10);
+        config.setMinimumIdle(Integer.parseInt(properties.getProperty(DB_MIN_IDLE)));
         config.setMaximumPoolSize(Integer.parseInt(properties.getProperty(DB_POOL_SIZE)));
         config.setAutoCommit(true);
         return config;
     }
 
     private static Properties getProperties() throws IOException {
-        try (FileInputStream fis = new FileInputStream("src/main/java/application.properties");) { //
+        try (FileInputStream fis = new FileInputStream("src/main/resources/application.properties")) { //
             Properties properties = new Properties();
             properties.load(fis);
             return properties;

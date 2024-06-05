@@ -1,14 +1,13 @@
+package jdbc.dao;
 
-
-import service.UserService;
-import service.UserServiceImpl;
+import jdbc.service.UserService;
+import jdbc.service.UserServiceImpl;
 
 public class Main {
     private final static UserService userService = new UserServiceImpl();
 
     public static void main(String[] args) {
         userService.createUsersTable();
-
         userService.saveUser("Джо", "Байден", (byte) 78);
         userService.saveUser("Дональд", "Трамп", (byte) 74);
         userService.saveUser("Барак", "Обама", (byte) 59);

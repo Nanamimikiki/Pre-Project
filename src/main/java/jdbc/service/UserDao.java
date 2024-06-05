@@ -1,9 +1,8 @@
-package service;
-
-import model.User;
+package jdbc.service;
+import jdbc.model.User;
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
     void createUsersTable();
 
     void dropUsersTable();
