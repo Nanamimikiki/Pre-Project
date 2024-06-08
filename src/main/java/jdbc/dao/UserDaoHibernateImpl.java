@@ -1,7 +1,6 @@
 package jdbc.dao;
 
 import jdbc.model.User;
-import jdbc.service.UserDao;
 
 import java.util.List;
 

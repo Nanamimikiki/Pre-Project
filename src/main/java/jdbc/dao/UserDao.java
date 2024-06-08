@@ -1,4 +1,4 @@
-package jdbc.service;
+package jdbc.dao;
 import jdbc.model.User;
 import java.util.List;
 
