@@ -19,7 +19,7 @@ public class Util {
     private static final String DB_DRIVER_CLASS = "driver.class.name";
     private static final String DB_POOL_SIZE = "db.pool.size";
     private static final String DB_MIN_IDLE = "db.min.idle";
-    private static final  String LOGIN_TIMEOUT = "login.timeout";
+
     public static Util getInstance() {
         if (null == INSTANCE) {
             synchronized (Util.class) {
@@ -47,7 +47,7 @@ public class Util {
 
     public static DataSource getDataSource() throws IOException, SQLException {
         DataSource dataSource = new HikariDataSource(getDatasourceConfig());
-        dataSource.setLoginTimeout(Integer.parseInt(LOGIN_TIMEOUT));
+        dataSource.setLoginTimeout(3);
         return dataSource;
     }
 

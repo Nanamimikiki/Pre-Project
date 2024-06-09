@@ -11,7 +11,7 @@ public class Main {
 
         userService.createUsersTable();
 
-        userService.saveUser("Джо", "Байден", (byte) 78);
+        userService.saveUser("Joe", "Biden", (byte) 78);
         userService.saveUser("Дональд", "Трамп", (byte) 74);
         userService.saveUser("Барак", "Обама", (byte) 59);
         userService.saveUser("Джордж", "Буш", (byte) 74);
@@ -24,7 +24,6 @@ public class Main {
         }
 
         userService.cleanUsersTable();
-
         userService.dropUsersTable();
     }
 }

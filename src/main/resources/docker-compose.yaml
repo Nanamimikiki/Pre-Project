@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: pre-project-db
+    image: "postgres:alpine3.20"
+    restart: always
+    ports:
+      - "5434:5434"
+    env_file: docker-compose.env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PWD}
+      - POSTGRES_DB=${DB_NAME}
