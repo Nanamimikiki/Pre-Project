@@ -12,11 +12,11 @@ public class Main {
         userService.createUsersTable();
 
         userService.saveUser("Joe", "Biden", (byte) 78);
-        userService.saveUser("Дональд", "Трамп", (byte) 74);
+        userService.saveUser("Donald", "Trump", (byte) 74);
         userService.saveUser("Барак", "Обама", (byte) 59);
         userService.saveUser("Джордж", "Буш", (byte) 74);
 
-        userService.removeUserById(2);
+        userService.removeUserById(1);
 
         List<User> usersTable = userService.getAllUsers();
         for (User us : usersTable) {
