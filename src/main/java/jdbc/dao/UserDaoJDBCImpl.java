@@ -3,6 +3,7 @@ package jdbc.dao;
 
 import jdbc.model.User;
 import jdbc.util.Util;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

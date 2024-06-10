@@ -1,8 +1,7 @@
 package jdbc.service;
 
 import jdbc.dao.UserDaoJDBCImpl;
-import jdbc.model.User;
-
+import  jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
