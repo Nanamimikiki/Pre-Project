@@ -4,7 +4,6 @@ package jdbc.dao;
 import jdbc.model.User;
 import jdbc.util.Util;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private static Connection connection;
-
     public UserDaoJDBCImpl() {
     }
 
@@ -39,6 +36,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Statement statement = Util.getInstance().getConnection().createStatement()) {
             statement.executeUpdate("INSERT INTO users (name, lastName, age) " +
                     "VALUES ('" + name + "', '" + lastName + "', '" + age + "')");
+            System.out.println("User c именем -" + name + "успешно добавлен в базу данных!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
