@@ -1,11 +1,13 @@
 package jdbc.service;
 
+import jdbc.dao.UserDao;
+import jdbc.dao.UserDaoHibernateImpl;
 import jdbc.dao.UserDaoJDBCImpl;
 import  jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
+    private final UserDao userDao = new UserDaoHibernateImpl();
 
     public void createUsersTable() {
         userDao.createUsersTable();
