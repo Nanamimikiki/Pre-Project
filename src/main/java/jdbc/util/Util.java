@@ -62,16 +62,16 @@ public class Util {
     }
     public static Configuration getSessionConfiguration() {
         Configuration configuration = new Configuration();
-        Properties settings = new Properties();
-        settings.put(Environment.DRIVER, "org.postgresql.Driver");
-        settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
-        settings.put(Environment.URL, "jdbc:postgresql://localhost:5434/PreProject?Encoding=UTF-8");
-        settings.put(Environment.USER, "root");
-        settings.put(Environment.PASS, "root");
-        settings.put(Environment.SHOW_SQL, "true");
-        settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-        settings.put(Environment.HBM2DDL_AUTO, "create-drop");
-        configuration.setProperties(settings);
+        Properties properties = new Properties();
+        properties.put(Environment.DRIVER, "org.postgresql.Driver");
+        properties.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
+        properties.put(Environment.URL, "jdbc:postgresql://localhost:5434/PreProject?Encoding=UTF-8");
+        properties.put(Environment.USER, "root");
+        properties.put(Environment.PASS, "root");
+        properties.put(Environment.SHOW_SQL, "true");
+        properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
+        properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+        configuration.setProperties(properties);
         configuration.addAnnotatedClass(User.class);
         return configuration;
     }
